@@ -1,5 +1,9 @@
 <html>
 <head>
+<!-- the following links incorporate the CSS required for custom icon creation -->
+<link rel="stylesheet" href=" ionicons.min.css">
+<link rel="stylesheet" href="leaflet.awesome-markers.css">
+<script src="leaflet.awesome-markers.js"></script>
 <!-- the following links add the CSS and Javascript required for the Leaflet Map -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"
  integrity="sha512-
@@ -41,8 +45,16 @@ var geojsonFeature = {
  "coordinates": [-0.118092, 51.509865]
  }
 };
+var testMarkerPink = L.AwesomeMarkers.icon({
+ icon: 'play',
+ markerColor: 'pink'
+ });
 // and add it to the map
-L.geoJSON(geojsonFeature).addTo(mymap).bindPopup("<b>"+geojsonFeature.properties.name+" "+geojsonFeature.properties.popupContent+"<b>");
+L.geoJSON(geojsonFeature, {
+ pointToLayer: function (feature, latlng) {
+ return L.marker(latlng, {icon:testMarkerPink});
+ }
+ }).addTo(mymap).bindPopup("<b>"+geojsonFeature.properties.name+" "+geojsonFeature.properties.popupContent+"<b>");
 // create a custom popup
 var popup = L.popup();
 // create an event detector to wait for the user's click event and then use the popup to show them where they clicked
