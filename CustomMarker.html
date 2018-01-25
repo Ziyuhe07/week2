@@ -56,7 +56,7 @@
      }); 
 	 		// and add it to the map
 		L.geoJSON(geojsonFeature, {pointToLayer: function (feature, latlng) {
-		return L.marker(latlng, {icon:testMarkerPink});
+		return L.marker(latlng, {icon:testMarkerOrange});
 		}
 		}).addTo(mymap).bindPopup("<b>"+geojsonFeature.properties.name+" "+geojsonFeature.properties.popupContent+"</b>");
 // create a custom popup
