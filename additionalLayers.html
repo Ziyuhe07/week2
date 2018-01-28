@@ -24,16 +24,16 @@
 		<div id="mapid" style="width: 600px; height: 400px;"></div>
 		<!-- the following script will load the map and set the default view and zoom, as well as loading the
 		basemap tiles -->
-		<button id="addabusstops" name="addabusstops" onclick="addabusstopsData()">Click here to add the
-		bussops data </button>
-		<button id="removeabusstops" name="removeabusstops"
-		onclick="removeabusstopsData()">Click here to remove the Earthquake data </button>
+		<button id="addbusstops" name="addbusstops" onclick="addbusstopsData()">Click here to add the
+		busstoplayer data </button>
+		<button id="removebusstops" name="removebusstops"
+		onclick="removebusstopsData()">Click here to remove the busstoplayer data </button>
 		<script>
 		<!-- the following script will load the map and set the default view and zoom, as well as loading the
 		basemap tiles -->
 		<script>
 		// load the map
-		var mymap
+		var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 		// load the tiles	
 		
 		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
